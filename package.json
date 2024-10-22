@@ -1,0 +1,14 @@
+{
+  "name": "credit-card-input",
+  "version": "1.0.0",
+  "description": "lightweight, standalone utility designed to handle the formatting, and user-friendly input of credit card information",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "credit-card-input"
+  ],
+  "author": "IMythx",
+  "license": "ISC"
+}
