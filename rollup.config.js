@@ -1,8 +1,9 @@
-import typescript from "rollup-plugin-typescript2";
+import typescript from "@rollup/plugin-typescript";
 import { nodeResolve } from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
 import copy from "rollup-plugin-copy";
 import postcss from "rollup-plugin-postcss";
+import url from "@rollup/plugin-url";
 
 export default {
   input: "src/index.ts", // Entry point of your library
@@ -15,6 +16,9 @@ export default {
   plugins: [
     nodeResolve(), // Resolve dependencies in node_modules
     commonjs(), // Convert CommonJS modules to ES6 if needed
+    url({
+      include: ["**/*.png", "**/*.jpg", "**/*.svg"],
+    }),
     typescript(), // Compile TypeScript to JavaScript
     postcss({
       extract: true, // Extract CSS to a separate file

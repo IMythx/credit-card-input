@@ -138,7 +138,7 @@ const inputs = new CreditCardInputs({
 
 - Return: `void`
 
-#### example
+- Example
 
 ```javascript
 import { addNewCard } from "credit-card-inputs";
@@ -166,7 +166,7 @@ addNewCard({
 
 - Return: `void`
 
-#### example
+- Example
 
 ```javascript
 import { updateCard } from "credit-card-inputs";
