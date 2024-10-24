@@ -6,7 +6,6 @@ import metaUrlPlugin from "@chialab/esbuild-plugin-meta-url";
 const commonOptions = {
   entryPoints: ["src/index.ts"],
   bundle: true,
-  sourcemap: false,
   minify: true, // Minifies the output
   target: "esnext",
   loader: {
@@ -18,7 +17,7 @@ const commonOptions = {
   plugins: [
     umdWrapper(
       { libraryName: "credit-card-inputs", globalIdentifier: "CCI" },
-      metaUrlPlugin()
+      metaUrlPlugin(),
     ),
   ],
 };

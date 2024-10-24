@@ -2,19 +2,6 @@ import { cardTypes, CreditCardInputsInterface } from "./types";
 import { Errors, Icons, Inputs, Options } from "./types";
 import creditCardType from "credit-card-type";
 import inputmask from "inputmask";
-import defaultIcon from "./assets/credit-card-duotone.svg";
-import visaIcon from "./assets/visa.svg";
-import mastercardIcon from "./assets/mastercard.svg";
-import amexIcon from "./assets/amex.svg";
-import discoverIcon from "./assets/discover.svg";
-import dinersClubIcon from "./assets/diners.svg";
-import jcbIcon from "./assets/jcb.svg";
-import eloIcon from "./assets/elo.svg";
-import mirIcon from "./assets/mir.svg";
-import unionpayIcon from "./assets/unionpay.svg";
-import hipercardIcon from "./assets/hipercard.svg";
-import hiperIcon from "./assets/hiper.svg";
-import maestroIcon from "./assets/maestro.svg";
 
 const defaultErrors: Errors = {
   cardNumberInput: "Invalid card number",
@@ -23,19 +10,19 @@ const defaultErrors: Errors = {
 };
 
 const defaultIcons: Icons = {
-  default: defaultIcon,
-  visa: visaIcon,
-  mastercard: mastercardIcon,
-  "american-express": amexIcon,
-  discover: discoverIcon,
-  "diners-club": dinersClubIcon,
-  jcb: jcbIcon,
-  elo: eloIcon,
-  mir: mirIcon,
-  unionpay: unionpayIcon,
-  hipercard: hipercardIcon,
-  hiper: hiperIcon,
-  maestro: maestroIcon,
+  default: new URL("./assets/credit-card-duotone.svg", import.meta.url).href,
+  visa: new URL("./assets/visa.svg", import.meta.url).href,
+  mastercard: new URL("./assets/mastercard.svg", import.meta.url).href,
+  "american-express": new URL("./assets/amex.svg", import.meta.url).href,
+  discover: new URL("./assets/discover.svg", import.meta.url).href,
+  "diners-club": new URL("./assets/diners.svg", import.meta.url).href,
+  jcb: new URL("./assets/jcb.svg", import.meta.url).href,
+  elo: new URL("./assets/elo.svg", import.meta.url).href,
+  mir: new URL("./assets/mir.svg", import.meta.url).href,
+  unionpay: new URL("./assets/unionpay.svg", import.meta.url).href,
+  hipercard: new URL("./assets/hipercard.svg", import.meta.url).href,
+  hiper: new URL("./assets/hiper.svg", import.meta.url).href,
+  maestro: new URL("./assets/maestro.svg", import.meta.url).href,
 };
 
 export class CreditCardInputs implements CreditCardInputsInterface {
