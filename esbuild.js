@@ -1,5 +1,6 @@
-const esbuild = require("esbuild");
-const { umdWrapper } = require("esbuild-plugin-umd-wrapper");
+import esbuild from "esbuild";
+import { umdWrapper } from "esbuild-plugin-umd-wrapper";
+import metaUrlPlugin from "@chialab/esbuild-plugin-meta-url";
 
 // Common esbuild options for both UMD and ESM
 const commonOptions = {
@@ -15,7 +16,10 @@ const commonOptions = {
     ".css": "file", // Load .css files as assets
   },
   plugins: [
-    umdWrapper({ libraryName: "credit-card-inputs", globalIdentifier: "CCI" }),
+    umdWrapper(
+      { libraryName: "credit-card-inputs", globalIdentifier: "CCI" },
+      metaUrlPlugin()
+    ),
   ],
 };
 

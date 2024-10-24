@@ -14,7 +14,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsc && node esbuild.cjs",
+    "build": "tsc && node esbuild.js",
     "semantic-release": "semantic-release"
   },
   "keywords": [
@@ -28,6 +28,7 @@
     "inputmask": "^5.0.9"
   },
   "devDependencies": {
+    "@chialab/esbuild-plugin-meta-url": "^0.18.2",
     "@types/inputmask": "^5.0.7",
     "esbuild": "^0.24.0",
     "esbuild-plugin-copy": "^2.1.1",

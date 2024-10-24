@@ -80,7 +80,7 @@ export class CreditCardInputs implements CreditCardInputsInterface {
       cvvContainer.appendChild(cvvInput);
 
       cvvInput.addEventListener("input", () =>
-        this.removeError(cvvInput, [this.#codeSize], cvvErrorId, "cvvInput"),
+        this.removeError(cvvInput, [this.#codeSize], cvvErrorId, "cvvInput")
       );
 
       cvvInput.addEventListener("blur", () =>
@@ -88,8 +88,8 @@ export class CreditCardInputs implements CreditCardInputsInterface {
           cvvInput,
           [this.#codeSize],
           "cvvInput",
-          cvvErrorId,
-        ),
+          cvvErrorId
+        )
       );
 
       this.maskCvvInput(cvvInput, this.#codeSize);
@@ -123,7 +123,7 @@ export class CreditCardInputs implements CreditCardInputsInterface {
 
       cardNumberInput.addEventListener(
         "input",
-        this.cardNumberTypeChecker.bind(this),
+        this.cardNumberTypeChecker.bind(this)
       );
 
       cardNumberInput.addEventListener("blur", () => {
@@ -131,7 +131,7 @@ export class CreditCardInputs implements CreditCardInputsInterface {
           cardNumberInput,
           this.#availableCardNumberLengths,
           "cardNumberInput",
-          "credit-card-input-error",
+          "credit-card-input-error"
         );
 
         this.maskCvvInput(cvvInput, this.#codeSize);
@@ -156,7 +156,7 @@ export class CreditCardInputs implements CreditCardInputsInterface {
       expContainer.appendChild(expInput);
 
       expInput.addEventListener("blur", () =>
-        this.validateExpInput(expInput, inputFormat, "expInput", expErrorId),
+        this.validateExpInput(expInput, inputFormat, "expInput", expErrorId)
       );
 
       this.maskExpInput(expInput, expErrorId, inputFormat);
@@ -174,7 +174,7 @@ export class CreditCardInputs implements CreditCardInputsInterface {
       target,
       cardTypes[0].lengths,
       "credit-card-input-error",
-      "cardNumberInput",
+      "cardNumberInput"
     );
 
     if (cardTypes.length === 1) {
@@ -205,7 +205,7 @@ export class CreditCardInputs implements CreditCardInputsInterface {
         ReturnType<typeof creditCardType>[number],
         "lengths" | "gaps" | "type"
       >
-    >,
+    >
   ) {
     //@ts-ignore
     const mask = "9".repeat(cardType.lengths.at(-1)).split("");
@@ -215,13 +215,13 @@ export class CreditCardInputs implements CreditCardInputsInterface {
     });
 
     inputmask(mask.join(""), { placeholder: "", autoUnmask: true }).mask(
-      target,
+      target
     );
   }
 
   maskCvvInput(
     target: HTMLInputElement,
-    size: Partial<ReturnType<typeof creditCardType>[number]["code"]["size"]>,
+    size: Partial<ReturnType<typeof creditCardType>[number]["code"]["size"]>
   ) {
     const mask = "9".repeat(size);
 
@@ -254,7 +254,7 @@ export class CreditCardInputs implements CreditCardInputsInterface {
     target: HTMLInputElement,
     availableLengths: number[],
     errorId: string,
-    targetType: keyof Inputs,
+    targetType: keyof Inputs
   ) {
     const parent = target.parentElement;
 
@@ -273,7 +273,7 @@ export class CreditCardInputs implements CreditCardInputsInterface {
     target: HTMLInputElement,
     availableLengths: number[],
     targetType: keyof Inputs,
-    errorId: string,
+    errorId: string
   ): void {
     const error = document.getElementById(errorId);
 
@@ -302,7 +302,7 @@ export class CreditCardInputs implements CreditCardInputsInterface {
     target: HTMLInputElement,
     inputFormat: string,
     targetType: keyof Inputs,
-    errorId: string,
+    errorId: string
   ): void {
     const now = new Date();
 
@@ -349,5 +349,5 @@ export const updateCard: (
   type: cardTypes | string,
   options: Partial<
     Pick<ReturnType<typeof creditCardType>[number], "type" | "code" | "gaps">
-  >,
+  >
 ) => void = creditCardType.updateCard;
