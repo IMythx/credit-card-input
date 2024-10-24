@@ -12,7 +12,7 @@ export default {
     format: "umd", // UMD format
     name: "CCI", // Global variable name in browser
     sourcemap: true, // Enable source maps for debugging
-    assetFileNames: "assets/[name][extname]", // Ensure assets are copied to dist/assets/
+    assetFileNames: "src/assets/[name][extname]", // Ensure assets are copied to dist/assets/
   },
   plugins: [
     nodeResolve(), // Resolve dependencies in node_modules
