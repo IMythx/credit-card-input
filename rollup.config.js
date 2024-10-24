@@ -13,7 +13,7 @@ export default {
     format: "umd", // UMD format
     name: "CCI", // Global variable name in browser
     sourcemap: true, // Enable source maps for debugging
-    assetFileNames: "./assets/[name][extname]",
+    assetFileNames: "assets/[name][extname]",
   },
   plugins: [
     nodeResolve(), // Resolve dependencies in node_modules
@@ -24,20 +24,15 @@ export default {
       fileName: "[dirname][name][extname]", // Output path for assets
       destDir: "dist/assets", // Output directory for assets
     }),
-    includePaths({
-      paths: ["src/assets", "src"],
-      extensions: [".ts", ".js", ".tsx", ".jsx", ".css", ".scss"],
-    }),
-    typescript(), // Compile TypeScript to JavaScript
-    postcss({
-      extract: true, // Extract CSS to a separate file
-    }),
-
     // Copy static assets (images, fonts, etc.)
     copy({
       targets: [
         { src: "src/assets/*", dest: "dist/assets" }, // Copy all assets to dist/assets
       ],
+    }),
+    typescript(), // Compile TypeScript to JavaScript
+    postcss({
+      extract: true, // Extract CSS to a separate file
     }),
   ],
 };
