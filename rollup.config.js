@@ -4,6 +4,7 @@ import commonjs from "@rollup/plugin-commonjs";
 import copy from "rollup-plugin-copy";
 import postcss from "rollup-plugin-postcss";
 import url from "@rollup/plugin-url";
+import includePaths from "rollup-plugin-includepaths";
 
 export default {
   input: "src/index.ts", // Entry point of your library
@@ -22,6 +23,10 @@ export default {
       limit: 0, // Always copy assets, do not inline them as base64
       fileName: "[dirname][name][extname]", // Output path for assets
       destDir: "dist/assets", // Output directory for assets
+    }),
+    includePaths({
+      paths: ["src/assets", "src"],
+      extensions: [".ts", ".js", ".tsx", ".jsx", ".css", ".scss"],
     }),
     typescript(), // Compile TypeScript to JavaScript
     postcss({
