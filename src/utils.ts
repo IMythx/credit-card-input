@@ -207,6 +207,7 @@ export class CreditCardInputs implements CreditCardInputsInterface {
       >
     >,
   ) {
+    //@ts-ignore
     const mask = "9".repeat(cardType.lengths.at(-1)).split("");
 
     cardType?.gaps?.forEach((gap, index) => {

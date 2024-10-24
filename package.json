@@ -14,7 +14,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsc && rollup -c",
+    "build": "tsc && node esbuild.cjs",
     "semantic-release": "semantic-release"
   },
   "keywords": [
@@ -24,17 +24,14 @@
   "license": "MIT",
   "dependencies": {
     "credit-card-type": "^10.0.1",
+    "esbuild-plugin-postcss": "^0.2.1",
     "inputmask": "^5.0.9"
   },
   "devDependencies": {
-    "@rollup/plugin-commonjs": "^28.0.1",
-    "@rollup/plugin-node-resolve": "^15.3.0",
-    "@rollup/plugin-typescript": "^12.1.1",
-    "@rollup/plugin-url": "^8.0.2",
     "@types/inputmask": "^5.0.7",
-    "rollup": "^4.24.0",
-    "rollup-plugin-copy": "^3.5.0",
-    "rollup-plugin-postcss": "^4.0.2",
+    "esbuild": "^0.24.0",
+    "esbuild-plugin-copy": "^2.1.1",
+    "esbuild-plugin-umd-wrapper": "^3.0.0",
     "semantic-release": "^24.1.3"
   },
   "publishConfig": {
