@@ -2,6 +2,19 @@ import { cardTypes, CreditCardInputsInterface } from "./types";
 import { Errors, Icons, Inputs, Options } from "./types";
 import creditCardType from "credit-card-type";
 import inputmask from "inputmask";
+import defaultIcon from "./assets/credit-card-duotone.svg";
+import visaIcon from "./assets/visa.svg";
+import mastercardIcon from "./assets/mastercard.svg";
+import amexIcon from "./assets/amex.svg";
+import discoverIcon from "./assets/discover.svg";
+import dinersClubIcon from "./assets/diners.svg";
+import jcbIcon from "./assets/jcb.svg";
+import eloIcon from "./assets/elo.svg";
+import mirIcon from "./assets/mir.svg";
+import unionpayIcon from "./assets/unionpay.svg";
+import hipercardIcon from "./assets/hipercard.svg";
+import hiperIcon from "./assets/hiper.svg";
+import maestroIcon from "./assets/maestro.svg";
 
 const defaultErrors: Errors = {
   cardNumberInput: "Invalid card number",
@@ -10,19 +23,19 @@ const defaultErrors: Errors = {
 };
 
 const defaultIcons: Icons = {
-  default: "./assets/credit-card-duotone.svg",
-  visa: "./assets/visa.svg",
-  mastercard: "./assets/mastercard.svg",
-  "american-express": "./assets/amex.svg",
-  discover: "./assets/discover.svg",
-  "diners-club": "./assets/diners.svg",
-  jcb: "./assets/jcb.svg",
-  elo: "./assets/elo.svg",
-  mir: "./assets/mir.svg",
-  unionpay: "./assets/unionpay.svg",
-  hipercard: "./assets/hipercard.svg",
-  hiper: "./assets/hiper.svg",
-  maestro: "./assets/maestro.svg",
+  default: defaultIcon,
+  visa: visaIcon,
+  mastercard: mastercardIcon,
+  "american-express": amexIcon,
+  discover: discoverIcon,
+  "diners-club": dinersClubIcon,
+  jcb: jcbIcon,
+  elo: eloIcon,
+  mir: mirIcon,
+  unionpay: unionpayIcon,
+  hipercard: hipercardIcon,
+  hiper: hiperIcon,
+  maestro: maestroIcon,
 };
 
 export class CreditCardInputs implements CreditCardInputsInterface {
