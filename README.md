@@ -38,7 +38,7 @@ Credit-card-inputs is a vanilla JavaScript lightweight utility designed to handl
 2. Add the library script
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/credit-card-inputs/dist/js/credit-card-inputs.umd.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/credit-card-inputs/dist/credit-card-inputs.umd.js"></script>
 ```
 
 ## Getting Started (Using ESM modules)
@@ -77,7 +77,7 @@ import { CreditCardInputs } from "credit-card-inputs";
   <input type="text" id="cvvInput" />
   <input type="text" id="expinput" />
 </body>
-<script src="https://cdn.jsdelivr.net/npm/credit-card-inputs/dist/js/credit-card-inputs.umd.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/credit-card-inputs/dist/credit-card-inputs.umd.js"></script>
 <script>
   const cardNumberInput = document.getElementById("cardNumberInput");
 
@@ -129,7 +129,34 @@ const inputs = new CreditCardInputs({
   | `codeName` | `string` | Card brands provide different nomenclature for their security codes as well as varying lengths [see](https://github.com/braintree/credit-card-type?tab=readme-ov-file#code). you can use it as a label for the code input |
   | `invalide` | `Record<keyof Inputs, boolean>` | validation status for each input |
 
-2. ### `updateCard(type: cardTypes | string, options: Partial<Pick<ReturnType<typeof creditCardType>[number], "type" | "code" | "gaps">>)` update the card type with the following:
+2. ### `addNewCard(config: config)` add a new card type with the following:
+
+- Parameters:
+  | Name | Type | Description |
+  | --------- | ------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------- |
+  | `config` | <pre>`{`<br/> `niceType: string;`<br/> `type: string;`<br/> `patterns: number[];`<br/> `gaps: number[];`<br/> `lengths: number[];`<br/> `code: { name: string; size: number };`<br/>`}`</pre> | card type configuration [see](https://github.com/braintree/credit-card-type?tab=readme-ov-file#adding-new-cards) |
+
+- Return: `void`
+
+#### example
+
+```javascript
+import { addNewCard } from "credit-card-inputs";
+
+addNewCard({
+  niceType: "Fancy card",
+  type: "fancy card",
+  patterns: [41111],
+  gaps: [4, 8, 12],
+  lengths: [13, 16, 19],
+  code: {
+    name: "CVV",
+    size: 3,
+  },
+});
+```
+
+3. ### `updateCard(type: cardTypes | string, options: Partial<Pick<ReturnType<typeof creditCardType>[number], "type" | "code" | "gaps">>)` update the card type with the following:
 
 - Parameters:
   | Name | Type | Description |
@@ -144,14 +171,9 @@ const inputs = new CreditCardInputs({
 ```javascript
 import { updateCard } from "credit-card-inputs";
 
-updateCard("visa", {});
+updateCard("visa", {
+  code: {
+    name: "test",
+  },
+});
 ```
-
-3. ### `addNewCard(config: config)` add a new card type with the following:
-
-- Parameters:
-  | Name | Type | Description |
-  | --------- | ------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------- |
-  | `config` | <pre>`{`<br/> `niceType: string;`<br/> `type: string;`<br/> `patterns: number[];`<br/> `gaps: number[];`<br/> `lengths: number[];`<br/> `code: { name: string; size: number };`<br/>`}`</pre> | card type configuration [see](https://github.com/braintree/credit-card-type?tab=readme-ov-file#adding-new-cards) |
-
-- Return: `void`
