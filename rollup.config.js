@@ -18,6 +18,9 @@ export default {
     commonjs(), // Convert CommonJS modules to ES6 if needed
     url({
       include: ["**/*.png", "**/*.jpg", "**/*.svg"],
+      limit: 0, // Always copy assets, do not inline them as base64
+      fileName: "[dirname][name][extname]", // Output path for assets
+      destDir: "dist/assets", // Output directory for assets
     }),
     typescript(), // Compile TypeScript to JavaScript
     postcss({
