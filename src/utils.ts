@@ -2,19 +2,19 @@ import { cardTypes, CreditCardInputsInterface } from "./types";
 import { Errors, Icons, Inputs, Options } from "./types";
 import creditCardType from "credit-card-type";
 import inputmask from "inputmask";
-import defaultIcon from "./assets/credit-card-duotone.svg";
-import visaIcon from "./assets/visa.svg";
-import mastercardIcon from "./assets/mastercard.svg";
-import amexIcon from "./assets/amex.svg";
-import discoverIcon from "./assets/discover.svg";
-import dinersClubIcon from "./assets/diners.svg";
-import jcbIcon from "./assets/jcb.svg";
-import eloIcon from "./assets/elo.svg";
-import mirIcon from "./assets/mir.svg";
-import unionpayIcon from "./assets/unionpay.svg";
-import hipercardIcon from "./assets/hipercard.svg";
-import hiperIcon from "./assets/hiper.svg";
-import maestroIcon from "./assets/maestro.svg";
+import defaultIcon from "../dist/assets/credit-card-duotone.svg";
+import visaIcon from "../dist/assets/visa.svg";
+import mastercardIcon from "../dist/assets/mastercard.svg";
+import amexIcon from "../dist/assets/amex.svg";
+import discoverIcon from "../dist/assets/discover.svg";
+import dinersClubIcon from "../dist/assets/diners.svg";
+import jcbIcon from "../dist/assets/jcb.svg";
+import eloIcon from "../dist/assets/elo.svg";
+import mirIcon from "../dist/assets/mir.svg";
+import unionpayIcon from "../dist/assets/unionpay.svg";
+import hipercardIcon from "../dist/assets/hipercard.svg";
+import hiperIcon from "../dist/assets/hiper.svg";
+import maestroIcon from "../dist/assets/maestro.svg";
 
 const defaultErrors: Errors = {
   cardNumberInput: "Invalid card number",
