@@ -139,6 +139,14 @@ const inputs = new CreditCardInputs({
 
 - Return: `void`
 
+#### example
+
+```javascript
+import { updateCard } from "credit-card-inputs";
+
+updateCard("visa", {});
+```
+
 3. ### `addNewCard(config: config)` add a new card type with the following:
 
 - Parameters:

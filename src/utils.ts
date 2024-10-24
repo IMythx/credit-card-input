@@ -10,19 +10,19 @@ const defaultErrors: Errors = {
 };
 
 const defaultIcons: Icons = {
-  default: "./assets/credit-card-duotone.svg",
-  visa: "./assets/visa.svg",
-  mastercard: "./assets/mastercard.svg",
-  "american-express": "./assets/amex.svg",
-  discover: "./assets/discover.svg",
-  "diners-club": "./assets/diners.svg",
-  jcb: "./assets/jcb.svg",
-  elo: "./assets/elo.svg",
-  mir: "./assets/mir.svg",
-  unionpay: "./assets/unionpay.svg",
-  hipercard: "./assets/hipercard.svg",
-  hiper: "./assets/hiper.svg",
-  maestro: "./assets/maestro.svg",
+  default: "../dist/assets/credit-card-duotone.svg",
+  visa: "../dist/assets/visa.svg",
+  mastercard: "../dist/assets/mastercard.svg",
+  "american-express": "../dist/assets/amex.svg",
+  discover: "../dist/assets/discover.svg",
+  "diners-club": "../dist/assets/diners.svg",
+  jcb: "../dist/assets/jcb.svg",
+  elo: "../dist/assets/elo.svg",
+  mir: "../dist/assets/mir.svg",
+  unionpay: "../dist/assets/unionpay.svg",
+  hipercard: "../dist/assets/hipercard.svg",
+  hiper: "../dist/assets/hiper.svg",
+  maestro: "../dist/assets/maestro.svg",
 };
 
 export class CreditCardInputs implements CreditCardInputsInterface {
